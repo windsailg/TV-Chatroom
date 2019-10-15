@@ -1,0 +1,562 @@
+@import url(https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
+.inputer, #Chatroom .head_block, #Chatroom .head_block > .people_box, #Chatroom .head_block > .name_box, #Chatroom .enter_block, #Chatroom .enter_block > .enter_box, #Chatroom .enter_block > .send_box, #Chatroom .message_block, #Chatroom .message_block > .msg_box, #Chatroom .message_block > .msg_box.type_self, #Chatroom .message_block > .msg_box.type_others, #Chatroom .message_block > .msg_box > .others_avatar, #Chatroom .message_block > .msg_box > .msg_container, #Chatroom .enter_username_block > .enter_box {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-flow: row;
+      -ms-flex-flow: row;
+          flex-flow: row;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.img_box img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  background: -webkit-gradient(linear, right bottom, left top, from(#766E79), to(#495969));
+  background: -webkit-linear-gradient(right bottom, #766E79, #495969);
+  background: -o-linear-gradient(right bottom, #766E79, #495969);
+  background: linear-gradient(to left top, #766E79, #495969);
+  background-attachment: fixed;
+}
+
+html::-webkit-scrollbar, body::-webkit-scrollbar {
+  width: 0;
+}
+
+.inputer {
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  white-space: nowrap;
+  overflow: hidden;
+  -o-text-overflow: ellipsis;
+     text-overflow: ellipsis;
+  max-height: 40px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 100%;
+  padding: 6px 8px;
+  font-size: 18px;
+  background-color: transparent;
+  color: #fff;
+  border: solid #808080;
+  border-width: 0 0 1px 0;
+  outline: none;
+  letter-spacing: 1px;
+  -webkit-transition: 0.2s all ease-out;
+  -o-transition: 0.2s all ease-out;
+  transition: 0.2s all ease-out;
+  position: relative;
+}
+
+.inputer::-webkit-input-placeholder {
+  color: #808080;
+  -webkit-transition: 0.2s all ease-out;
+  -o-transition: 0.2s all ease-out;
+  transition: 0.2s all ease-out;
+}
+
+.inputer::-moz-placeholder {
+  color: #808080;
+  -webkit-transition: 0.2s all ease-out;
+  -o-transition: 0.2s all ease-out;
+  transition: 0.2s all ease-out;
+}
+
+.inputer:-ms-input-placeholder {
+  color: #808080;
+  -webkit-transition: 0.2s all ease-out;
+  -o-transition: 0.2s all ease-out;
+  transition: 0.2s all ease-out;
+}
+
+.inputer::-ms-input-placeholder {
+  color: #808080;
+  -webkit-transition: 0.2s all ease-out;
+  -o-transition: 0.2s all ease-out;
+  transition: 0.2s all ease-out;
+}
+
+.inputer::placeholder {
+  color: #808080;
+  -webkit-transition: 0.2s all ease-out;
+  -o-transition: 0.2s all ease-out;
+  transition: 0.2s all ease-out;
+}
+
+.inputer:focus {
+  border: solid #F0E68C;
+  border-width: 0 0 1px 0;
+}
+
+.inputer:focus::-webkit-input-placeholder {
+  color: transparent;
+}
+
+.inputer:focus::-moz-placeholder {
+  color: transparent;
+}
+
+.inputer:focus:-ms-input-placeholder {
+  color: transparent;
+}
+
+.inputer:focus::-ms-input-placeholder {
+  color: transparent;
+}
+
+.inputer:focus::placeholder {
+  color: transparent;
+}
+
+button {
+  border-color: transparent;
+  border-style: solid;
+  border-width: 0px;
+  border-radius: 0;
+  background-color: #374654;
+  padding: 8px 30px;
+}
+
+button:hover {
+  -webkit-transition: .2s ease-out;
+  -o-transition: .2s ease-out;
+  transition: .2s ease-out;
+  opacity: .9;
+}
+
+#Chatroom .message_block::-webkit-scrollbar {
+  width: 8px;
+  background-color: transparent;
+  border-radius: 10px;
+}
+
+#Chatroom .message_block::-webkit-scrollbar-track {
+  border-radius: 10px;
+  margin: 8px 0;
+}
+
+#Chatroom .message_block::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.9);
+  border-style: solid;
+  border-width: 0px 0px 0px 0px;
+}
+
+.area {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: inline-block;
+  float: left;
+  width: 100%;
+  height: 100%;
+  padding: 40px 0;
+}
+
+.area .container {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: block;
+  overflow: hidden;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1300px;
+  padding: 20px 10px 10px;
+}
+
+@media all and (max-width: 1301px) {
+  .area .container {
+    width: 100%;
+    padding: 10px 10px 10px;
+  }
+}
+
+.area .container.type_chatroom {
+  padding: 0px 0px;
+  max-width: unset;
+}
+
+#Chatroom .head_block {
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  overflow: hidden;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  max-height: 40px;
+  background-color: #374654;
+  padding: 5px 24px;
+  color: #fff;
+}
+
+#Chatroom .head_block > .box {
+  padding: 8px 0px;
+}
+
+#Chatroom .head_block > .box > .ele {
+  padding: 0px 5px;
+}
+
+#Chatroom .head_block > .people_box {
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  max-width: 300px;
+}
+
+#Chatroom .head_block > .people_box > .num {
+  font-weight: bold;
+  color: #F0E68C;
+}
+
+#Chatroom .head_block > .name_box {
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  max-width: 300px;
+}
+
+#Chatroom .head_block > .name_box > .name {
+  font-weight: bold;
+  color: #F0E68C;
+}
+
+#Chatroom .enter_block {
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  position: fixed;
+  z-index: 1;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  max-height: 50px;
+  background-color: #374654;
+  padding: 0  0 0 24px;
+  color: #fff;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+#Chatroom .enter_block > .enter_box {
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: calc(100% - 60px);
+}
+
+#Chatroom .enter_block > .send_box {
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transition: 0.2s all ease-out;
+  -o-transition: 0.2s all ease-out;
+  transition: 0.2s all ease-out;
+  transition: 0.2s all ease-out;
+  cursor: pointer;
+  width: 60px;
+  height: 100%;
+  background-image: url("../img/chat_room_arrow.svg");
+  background-repeat: no-repeat;
+  background-size: 60%;
+  background-position: center;
+}
+
+#Chatroom .enter_block > .send_box:hover {
+  opacity: .8;
+  -webkit-transition-duration: .1s;
+       -o-transition-duration: .1s;
+          transition-duration: .1s;
+}
+
+#Chatroom .message_block {
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: fixed;
+  width: calc(100% - 3px);
+  height: calc(100% - 90px);
+  padding: 5px 24px 25px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+#Chatroom .message_block > .msg_box {
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  padding: 8px 0;
+}
+
+#Chatroom .message_block > .msg_box.type_self {
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+#Chatroom .message_block > .msg_box.type_self .msg_container {
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  padding: 0 0px 0 40px;
+}
+
+@media all and (max-width: 400px) {
+  #Chatroom .message_block > .msg_box.type_self .msg_container {
+    padding: 0;
+  }
+}
+
+#Chatroom .message_block > .msg_box.type_self .msg_container .msg_content_box {
+  background-color: #F0E68C;
+}
+
+#Chatroom .message_block > .msg_box.type_self .msg_container .msg_content_box::after {
+  right: -5px;
+  -webkit-transform: rotate(50deg);
+      -ms-transform: rotate(50deg);
+          transform: rotate(50deg);
+  border-width: 0 8px 16px 8px;
+  border-color: transparent transparent #F0E68C transparent;
+}
+
+#Chatroom .message_block > .msg_box.type_others {
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+#Chatroom .message_block > .msg_box.type_others .msg_container {
+  padding: 0 40px 0 0;
+}
+
+@media all and (max-width: 400px) {
+  #Chatroom .message_block > .msg_box.type_others .msg_container {
+    padding: 0;
+  }
+}
+
+#Chatroom .message_block > .msg_box.type_others .msg_container .msg_content_box {
+  background-color: #fff;
+}
+
+#Chatroom .message_block > .msg_box.type_others .msg_container .msg_content_box::after {
+  left: -5px;
+  -webkit-transform: rotate(-50deg);
+      -ms-transform: rotate(-50deg);
+          transform: rotate(-50deg);
+  border-width: 0 8px 16px 8px;
+  border-color: transparent transparent #fff transparent;
+}
+
+#Chatroom .message_block > .msg_box.type_others .msg_container .datetime {
+  text-align: right;
+}
+
+#Chatroom .message_block > .msg_box > .others_avatar {
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 42px;
+  height: 42px;
+  margin: 0 8px 0 0;
+  border-radius: 50px;
+  background-color: #fff;
+}
+
+#Chatroom .message_block > .msg_box > .msg_container {
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  width: calc(100% - 60px);
+  max-width: 740px;
+  -webkit-transition: 0.2s all ease-out;
+  -o-transition: 0.2s all ease-out;
+  transition: 0.2s all ease-out;
+}
+
+#Chatroom .message_block > .msg_box > .msg_container > .others_name {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: inline-block;
+  float: left;
+  width: 100%;
+  padding: 8px 6px;
+  color: #fff;
+  font-size: 13px;
+  position: relative;
+}
+
+#Chatroom .message_block > .msg_box > .msg_container > .msg_content_box {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: inline-block;
+  float: left;
+  min-width: auto;
+  padding: 15px 17px 11px 17px;
+  border-radius: 23px;
+  line-height: 22px;
+  position: relative;
+}
+
+#Chatroom .message_block > .msg_box > .msg_container > .msg_content_box::after {
+  content: '';
+  position: absolute;
+  top: -5px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+}
+
+#Chatroom .message_block > .msg_box > .msg_container > .msg_content_box > .msg_content_box {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: block;
+  float: left;
+}
+
+#Chatroom .message_block > .msg_box > .msg_container > .msg_content_box > .datetime {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: block;
+  float: left;
+  font-size: 12px;
+  padding: 5px 0 0 0;
+  line-height: 15px;
+  width: 100%;
+  color: #495969;
+}
+
+#Chatroom .enter_username_block {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: inline-block;
+  float: left;
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  -webkit-transition: 0.2s all ease-out;
+  -o-transition: 0.2s all ease-out;
+  transition: 0.2s all ease-out;
+}
+
+#Chatroom .enter_username_block > .enter_box {
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: absolute;
+  right: 0;
+  margin-right: auto;
+  left: 0;
+  margin-left: auto;
+  top: calc(20% - 50px);
+  z-index: 1;
+  border-radius: 15px;
+  background-color: #fff;
+  -webkit-box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5);
+          box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5);
+  width: 250px;
+  height: 220px;
+}
+
+#Chatroom .enter_username_block > .enter_box > .title {
+  padding: 15px 0 15px 0;
+  font-size: 20px;
+  font-weight: bold;
+  color: #495969;
+}
+
+#Chatroom .enter_username_block > .enter_box .inputer {
+  color: #333;
+  border-width: 0 0 2px 0;
+}
+
+#Chatroom .enter_username_block > .enter_box .inputer:focus {
+  border-color: unset;
+  border-width: 0 0 2px 0;
+}
+
+#Chatroom .enter_username_block > .enter_box .inputer::-webkit-input-placeholder {
+  color: #bbb;
+}
+
+#Chatroom .enter_username_block > .enter_box .inputer::-moz-placeholder {
+  color: #bbb;
+}
+
+#Chatroom .enter_username_block > .enter_box .inputer:-ms-input-placeholder {
+  color: #bbb;
+}
+
+#Chatroom .enter_username_block > .enter_box .inputer::-ms-input-placeholder {
+  color: #bbb;
+}
+
+#Chatroom .enter_username_block > .enter_box .inputer::placeholder {
+  color: #bbb;
+}
+
+#Chatroom .enter_username_block > .mask {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: inline-block;
+  float: left;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+  background: #000;
+  opacity: .55;
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+}

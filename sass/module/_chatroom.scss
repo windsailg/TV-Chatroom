@@ -1,0 +1,350 @@
+
+
+$clr_light:#766E79;
+// $clr_gray:#727B84;
+$clr_dark:#495969;
+$clr_darker:#374654;
+$clr_yellow:#F0E68C;
+$clr_gray:#808080;
+
+//settings
+html,body{
+
+   width: 100%;
+   height: 100%;
+   background: linear-gradient(to left top, $clr_light ,$clr_dark);
+   background-attachment: fixed;
+    &::-webkit-scrollbar { 
+        width: 0 ; 
+     }
+
+}
+.inputer{
+   @include fxfs;
+   @include nowrap;
+   box-sizing:border-box;
+   width: 100%;
+   padding: 6px 8px ;
+   font-size: 18px;
+   background-color: transparent;
+   color:#fff;;
+   border: solid $clr_gray;
+   border-width: 0 0 1px 0;
+   outline: none;
+   letter-spacing: 1px;
+   @include tst;
+   position: relative;
+   &::placeholder{
+      color:$clr_gray;
+      @include tst;
+   }
+   &:focus{
+      border: solid $clr_yellow ;
+      border-width: 0 0 1px 0;
+      // color:$clr_yellow;
+      // box-shadow: 0px 0px 10px $clr_yellow;
+      // @include ds( 0px ,0px ,10px, $clr_yellow);
+      &::placeholder{
+         color:transparent;
+      }
+   }
+}
+button{
+   border-color:transparent ;
+   border-style: solid ;
+   border-width: 0px;
+   border-radius: 0;
+   background-color: $clr_darker;
+   padding: 8px 30px;
+   &:hover{
+      transition: .2s ease-out;
+      opacity: .9;
+   }
+}
+%ChatRoomScrollStyle{
+   &::-webkit-scrollbar {
+      width:8px;
+      background-color:transparent;
+      -webkit-border-radius: 10px;
+      border-radius: 10px;
+   }
+   &::-webkit-scrollbar-track {
+      -webkit-border-radius: 10px;
+      border-radius: 10px;
+      margin:8px 0 ;
+   }
+   &::-webkit-scrollbar-thumb {
+      -webkit-border-radius: 10px;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.9);
+      border-style: solid;
+      border-width: 0px 0px 0px 0px;
+   }
+}
+
+//PageStyle
+
+.area{
+   @include ibl;
+   width: 100%;
+   height:100%;
+   padding: 40px 0;
+   .container{
+      @include b;
+      overflow: hidden;
+      margin:  0 auto;
+      width: 100%;
+      max-width: 1300px;
+      padding: 20px 10px 10px;
+      @include M1301(){
+         width: 100%;
+         padding: 10px 10px 10px;
+      }
+      &.type_chatroom{
+         padding: 0px 0px ;
+         max-width: unset;
+      }
+
+   }
+}
+
+#Chatroom{
+   
+   .head_block{
+      @include fxb;
+      overflow: hidden;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      max-height: 40px;
+      background-color:$clr_darker;
+      padding: 5px 24px;
+      color: #fff;
+      > .box{
+          padding: 8px 0px;
+         > .ele{
+            padding: 0px 5px;
+         }
+      }
+      > .people_box{
+         @include fxb;
+         max-width: 300px;
+
+         > .num{
+            font-weight: bold;
+            color:$clr_yellow;
+         }
+      }
+      > .name_box{
+         @include fxb;
+         max-width: 300px;
+         > .name{
+            font-weight: bold;
+            color:$clr_yellow;
+         }
+      }
+   }
+
+   .enter_block{
+      @include fxb;
+      position: fixed;
+      z-index: 1;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
+      max-height: 50px;
+      background-color:$clr_darker;
+      padding: 0  0 0 24px;
+      color: #fff;
+      user-select: none;
+      > .enter_box{
+         @include fxc;
+         width: calc(100% - 60px);
+      }
+      > .send_box{
+         @include fxc;
+         @include tst;
+         @include hover;
+         width:60px;
+         height: 100%;
+         background-image: url('../img/chat_room_arrow.svg');
+         background-repeat: no-repeat;
+         background-size: 60%;
+         background-position: center;
+         // background-attachment: fixed;
+      }
+   }
+
+   .message_block{
+      @include fxc;
+      @extend %ChatRoomScrollStyle;
+      box-sizing: border-box;
+      position: fixed;
+      width: calc(100% - 3px);
+      height: calc(100% - 90px);
+      padding:  5px 24px 25px; 
+      overflow-x: hidden;
+      overflow-y: scroll;
+      > .msg_box{
+         @include fxc;
+         width:100%;
+         padding:  8px 0;
+         &.type_self{
+            @include fxfe;
+            align-items: flex-start;
+            .msg_container{
+               justify-content: flex-end;
+               padding:  0 0px 0 40px;
+               @include MCW(400px){
+                  padding:  0 
+               }
+               .msg_content_box{
+                  background-color:$clr_yellow;
+                  &::after{
+                     right: -5px;
+                     transform: rotate(50deg);
+                     border-width: 0 8px 16px 8px;
+                     border-color: transparent transparent $clr_yellow transparent;
+                  }
+               }
+            }
+
+         }
+         &.type_others{
+            @include fxfs;
+            align-items: flex-start;
+            .msg_container{
+               padding:  0 40px 0 0;
+               @include MCW(400px){
+                  padding:  0 
+               }
+               .msg_content_box{
+                  background-color:#fff;
+                  &::after{
+                     left: -5px;
+                     transform: rotate(-50deg);
+                     border-width: 0 8px 16px 8px;
+                     border-color: transparent transparent #fff transparent;
+                  }
+               }
+               .datetime{
+                  text-align: right;
+               }
+            }
+
+         }
+         > .others_avatar{
+            @include fxc;
+            width: 42px;
+            height: 42px;
+            margin:  0 8px 0 0;
+            border-radius: 50px;
+            background-color:#fff;
+         }
+         > .msg_container{
+               @include fxfs;
+               width: calc(100% - 60px);
+               max-width: (800px - 60px);
+               @include tst;
+            > .others_name{
+               @include ibl;
+               width: 100%;
+               padding: 8px 6px; 
+               color:#fff;
+               font-size: 13px;
+               position: relative
+            }
+            > .msg_content_box{
+               @include ibl;
+               min-width: auto;
+               padding: 15px 17px 11px 17px;
+               border-radius: 23px;
+               line-height: 22px;
+               position: relative;
+
+               &::after{
+                  content: '';  
+                  position: absolute;
+                  top:-5px;
+                  width: 0;
+                  height: 0;
+                  border-style: solid;
+               }
+               > .msg_content_box{
+                  @include bl;
+               }
+               > .datetime{
+                  @include bl;
+                  // font-weight: bold;
+                  font-size: 12px;
+                  padding: 5px 0 0 0;
+                  line-height: 15px;
+                  width: 100%;
+                  color:$clr_dark;
+               }
+            }
+         }
+      }
+   }
+
+   .enter_username_block{
+      
+      @include ibl;;
+      position: fixed;
+      z-index: 2;
+      width: 100%;
+      height: 100%;;
+      @include tst;
+      > .enter_box{
+         @include fxc;
+         position: absolute;
+         @include arl;
+         top: calc(20% - 50px);
+         z-index: 1;
+         border-radius: 15px;
+         background-color: #fff;
+         box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5);
+         width: 250px;
+         height: 220px;
+         > .title{
+            padding:  15px 0 15px 0;
+            font-size: 20px;
+            font-weight: bold;
+            color:$clr_dark;;
+         }
+         .inputer{
+            color:#333;
+            border-width: 0 0 2px 0;
+            &:focus{
+               // border: solid rgb(90, 103, 148) ;
+               border-color: unset;
+               border-width: 0 0 2px 0;
+               // color:$clr_yellow;
+               // box-shadow: 0px 0px 10px $clr_yellow;
+               // @include ds( 0px ,0px ,10px, $clr_yellow);
+            }
+            &::placeholder{
+               color:#bbb;
+            }
+         }
+         
+
+
+      }
+      > .mask{
+         @include ibl;
+         @include aa;
+         background: #000;
+         opacity: .55;
+         position: absolute;
+
+         width: 100%;
+         height: 100vh;
+      }
+   }
+
+}
+
+
