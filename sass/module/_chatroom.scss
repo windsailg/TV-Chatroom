@@ -82,6 +82,7 @@ button{
    }
 }
 
+
 //PageStyle
 
 .area{
@@ -108,7 +109,7 @@ button{
    }
 }
 
-#Chatroom{
+.chatroom{
    
    .head_block{
       @include fxb;
@@ -252,7 +253,7 @@ button{
                @include ibl;
                width: 100%;
                padding: 8px 6px; 
-               color:#fff;
+               color:#ffffff;
                font-size: 13px;
                position: relative
             }

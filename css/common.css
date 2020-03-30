@@ -21,11 +21,6 @@
           align-items: center;
 }
 
-.img_box img {
-  max-width: 100%;
-  max-height: 100%;
-}
-
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -103,7 +98,7 @@ body {
 
 a {
   text-decoration: none;
-  color: #363636;
+  color: #2589e7;
   -webkit-transition: 0.2s all ease-out;
   -o-transition: 0.2s all ease-out;
   transition: 0.2s all ease-out;
@@ -115,7 +110,7 @@ a:hover {
 
 a.type2 {
   text-decoration: underline;
-  color: #4370b3;
+  color: #2589e7;
 }
 
 input {
@@ -307,7 +302,7 @@ button.shape {
   float: left;
   padding: 2px 12px 0 8px;
   font-size: 12px;
-  color: #BCBDBC;
+  color: #777777;
 }
 
 .bread_crumb_block .bread_crumb .bread_crumb_item.bc_last {
