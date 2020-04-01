@@ -1,0 +1,281 @@
+
+$clr_light:#766E79;
+// $clr_gray:#727B84;
+$clr_dark:#495969;
+$clr_darker:#374654;
+$clr_yellow:#F0E68C;
+$clr_gray:#808080;
+
+//settings
+
+
+//PageStyle
+.area{
+   &.type__video{
+      
+   }
+   .container{
+      &.type__video{
+
+         max-width: 1500px;
+         @include MCW(1501px) {
+            box-sizing: border-box;
+            width: 100%;
+            padding: 10px 10px 10px;
+         }
+
+      }
+   }
+}
+
+.header__block {
+   @include fxfsw();
+   @include MCW(800px) {
+      justify-content: center;
+      margin: 0px auto 20px;
+   }
+   .header__logo{
+      @include fxcw(250px);
+      @include MCW(800px) {
+         max-width: 180px;
+      }
+   }
+}
+
+.player__page{
+   position: relative;
+   .goback__block {
+      @include fxfsw();
+      margin: 20px 0 14px;
+      font-size: 1.2em;
+      @include MCW(800px){
+         position: absolute;
+         top: 22px;
+         left: 0;
+         padding: 0 10px ;
+         font-size: 1.5em;
+         .goback__text{
+            display: none;
+         }
+      }
+      .goback__box {
+         color: #eeeeee;
+      }
+   }
+
+   .player__block {
+      @include fxfsw();
+      height: 600px;
+      max-height: calc(100vh - 180px);
+      @include MCW(800px) {
+      }
+
+      .player__box {
+         @include iblw();
+         height: 100%;
+         position: relative;
+         &.type__video{
+            @include iblw(1150px);
+            height: 100%;
+            iframe,video{
+               width: 100%;
+               height: 100%;
+               max-width: 100%;
+               max-height: calc(100% - 37px);
+               @include MCW(800px){
+                  max-height: calc(100% - 67px);
+               }
+            }
+         }
+         &.type__video__list{
+            max-width: calc(100% - 1151px);
+         }
+      }
+
+      .status__box {
+         @include fxfsw();
+         background-color: #232629;
+         position: absolute;
+         bottom: 0px;
+         right: 0;
+         left: 0;
+         padding: 8px ;
+      }
+      .status__item{
+         @include fxfsw(200px);
+         @include MCW(800px) {
+            max-width:130px;
+         }
+         &.status__server{
+            .selecter {
+               @include MCW(800px) {
+                  max-width: 65px;
+               }
+            }
+         }
+         &.status__speed{
+            .selecter{
+               @include MCW(800px) {
+                  max-width: 45px;
+               }
+            }
+         }
+      }
+      .select__ele{
+         @include fxfsw();
+         font-size: 1em;
+         color: #ffffff;
+         @include MCW(800px) {
+            font-size: .8em;
+         }
+         .select__title{
+            @include fxfsw(65px);
+            // letter-spacing: 1px;
+            @include MCW(800px) {
+               max-width: 55px;
+               letter-spacing: 0px;
+            }
+         }
+         .selecter{
+            text-align: center;
+            @include iblw(80px);
+            width: auto;
+            max-width: unset;
+            background-color: transparent;
+            color: $clr_yellow;
+            border: 1px solid $clr_yellow;
+            border-width: 0 0 1px 0;
+            outline: none;
+            font-size: 1em;
+            border-radius: 0;
+            @include MCW(800px) {
+               font-size: .9em;
+            }
+         }
+      }
+
+
+   }
+
+   .video__list__box{
+      @include fxv;
+      user-select: none;
+      justify-content: flex-start;
+      width: 100%;
+      height: 100%;
+      background-color: $clr_darker;
+      
+      .video__list__infos{
+         @include fxfsw();
+         height: 140px;
+         padding: 15px;
+      }
+
+      .video__list__infos__item{
+         @include fxfsw();
+         color: #ffffff;
+         font-size: .9em;;
+         span{
+            color: $clr_yellow;
+         }
+      }
+
+      .video__list__main{
+         @include fxbw();
+         height: 100%;
+         overflow: hidden;
+      }
+
+      .video__list__tab{
+         @include fxfsw();
+         
+         .video__list__tab__item{
+            @include fxcw(50%);
+            padding: 14px;
+            background-color: #ababab;
+            color: #eeeeee;
+            cursor: pointer;
+            font-size: .9em;
+            i{
+               @include fxc;
+               width: 22px;
+            }
+
+            &.video__list__tab--isactive{
+               color: $clr_darker;
+               font-weight: 600;
+               background-color: #efeeee;
+            }
+
+         }
+      }
+
+      .video__list{
+         @include iblw();
+         background-color: #eeeeee;
+         height: 100%;
+         padding: 10px;
+         overflow-x: hidden;
+         overflow-y: scroll;
+      }
+
+      .video__list__item{
+         @include fxbw();
+         float: left;
+         align-items: flex-start;
+         font-size: .9em;
+         max-height: 2em;
+         overflow: hidden;
+         padding: 2px 5px;
+         margin: 5px 0;
+         position: relative;
+         // &:not(:last-child)::after{
+         //    // border: solid #cccccc;
+         //    // border-width: 0 0 1px 0;
+         //    content: '';
+         //    @include fxcw();
+         //    position: absolute;
+         //    height: 1px;
+         //    bottom: 0px;
+         //    background-color: #cccccc;
+         // }
+
+         &.video__list__item--isopen{
+            max-height: unset;
+         }
+         &.video__list__item--iswatch {
+            background-color: $clr_yellow;
+         }
+
+      }
+
+      .video__list__item__trigger{
+         @include fxcw(15px);
+         cursor: pointer;
+         padding: 5px 0;
+         font-size: 1.2em;
+         &.video__list__item__trigger--isopen {
+            
+         }
+         i {
+
+         }
+      }
+
+      .video__list__item__title{
+         @include fxfsw(calc(100% - 100px));
+         line-height: 2em;
+         color: #555555;
+      }
+
+      .video__list__item__time{
+         @include fxfsw(70px);
+         padding: 7px 0;
+      }
+
+   }
+
+}
+
+
+

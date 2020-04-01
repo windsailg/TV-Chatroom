@@ -4,14 +4,13 @@
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-   <title>TV Chatroom</title>
+   <title>Video</title>
 
 
    <!-- Golbal -->
-   <link rel="stylesheet" href="css/common.css">
 
    <!-- This Page -->
-   <link rel="stylesheet" href="css/chatroom.css">
+   <link rel="stylesheet" href="css/style.css">
 
    <!-- Plugin -->
 
@@ -20,222 +19,443 @@
 
    
 </head>
-<body id="page"">
+
+<body id="page" class="player__page">
    
-   <div class="area">
-      <div class="container type_chatroom">
+   <div class="area type__video">
+      <div class="container type__video">
 
+         <div class="header__block">
+            <div class="header__logo img_box">
+               <img src="img/global/player_logo.png">
+            </div>
+         </div>
+   
+         <div class="goback__block">
+            <a href="#" class="goback__box">
+               <i class="fa fa-arrow-circle-left" ></i>
+               <span class="goback__text">back</span>
+            </a>
+         </div>
 
-         <div class="head_block">
+         <div class="player__block">
 
-            <div class="box people_box">
-               <div class="ele title">聊天室人數</div>
-               <div class="ele num">14</div>
+            <div class="player__box type__video">
+
+               <iframe src="https://www.youtube.com/embed/CVHXemgJRck" frameborder="0"
+                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen></iframe>
+
+                  <!-- <video controls="controls">
+                     <source src="https://www.youtube.com/embed/CVHXemgJRck"/>
+                  </video> -->
+               
+               <div class="status__box">
+
+                  <div class="status__item status__server">
+
+                     <div class="select__ele">
+                        <div class="select__title">伺服器：</div>
+                        <select class="selecter" data-province="Server1">
+                           <option value="Server1">Server1</option>
+                           <option value="Server2">Server2</option>
+                           <option value="Server3">Server3</option>
+                        </select>
+                     </div>
+
+                  </div>
+
+                  <div class="status__item status__speed">
+
+                     <div class="select__ele">
+                        <div class="select__title">速率：</div>
+                        <select class="selecter" data-province="1">
+                           <option value="0.5">0.5</option>
+                           <option value="0.75">0.75</option>
+                           <option value="1">1</option>
+                           <option value="1.5">1.5</option>
+                           <option value="2">2</option>
+                           <option value="3">3</option>
+                        </select>
+                     </div>
+
+                  </div>
+
+               </div>
+
             </div>
 
-            <div class="box name_box">
-               <div class="ele title">暱稱</div>
-               <div class="ele name">Julia</div>
+            <div class="player__box type__video__list">
+               <div class="video__list__box">
+
+                  <div class="video__list__infos">
+
+                     <div class="video__list__infos__item hello">
+                        您好！
+                     </div>
+                     <div class="video__list__infos__item this__time">
+                        本次觀看：<span>04:32:15</span>
+                     </div>
+                     <div class="video__list__infos__item last__time">
+                        贈與時數尚餘：<span>01:34:55</span>
+                     </div>
+
+                  </div>
+
+                  <div class="video__list__main">
+
+                     <div id="VideoListTab" class="video__list__tab">
+
+                        <div class="video__list__tab__item tab__video__list video__list__tab--isactive">
+                           <i class="fa fa-list-ul" ></i>影片列表
+                        </div>
+
+                        <div class="video__list__tab__item tab__tabs__list">
+                           <i class="fa fa-bookmark" ></i>頁籤列表
+                        </div>
+
+                     </div>
+
+                     <div id="VideoList" class="video__list">
+
+                        <div class="video__list__item ">
+
+                           <div class="video__list__item__trigger">
+                              <i class="fa fa-plus-square-o "></i>
+                           </div>
+
+                           <a href="#" class="video__list__item__title">
+                              03_ (向量)工程數學寫真秘笈
+                              0-1向量代數與微分-向量內機
+                           </a>
+
+                           <div class="video__list__item__time">
+                              02:50:51
+                           </div>
+
+                        </div>
+                        
+                        <div class="video__list__item ">
+
+                           <div class="video__list__item__trigger">
+                              <i class="fa fa-plus-square-o "></i>
+                           </div>
+
+                           <a href="#" class="video__list__item__title">
+                              03_(向量)工程數學寫真秘笈(下) 
+                           </a>
+
+                           <div class="video__list__item__time">
+                              02:50:51
+                           </div>
+
+                        </div>
+
+                        <div class="video__list__item ">
+
+                           <div class="video__list__item__trigger">
+                              <i class="fa fa-plus-square-o "></i>
+                           </div>
+
+                           <a href="#" class="video__list__item__title">
+                              04_(向量)工程數學寫真秘笈(下) 
+                           </a>
+
+                           <div class="video__list__item__time">
+                              02:50:51
+                           </div>
+
+                        </div>
+
+                        <div class="video__list__item ">
+
+                           <div class="video__list__item__trigger">
+                              <i class="fa fa-plus-square-o "></i>
+                           </div>
+
+                           <a href="#" class="video__list__item__title">
+                              06_(微分)1-4正合積分因子例題;...
+                           </a>
+
+                           <div class="video__list__item__time">
+                              02:50:51
+                           </div>
+
+                        </div>
+
+                        <div class="video__list__item ">
+
+                           <div class="video__list__item__trigger">
+                              <i class="fa fa-plus-square-o "></i>
+                           </div>
+
+                           <a href="#" class="video__list__item__title">
+                              03_ (向量)工程數學寫真秘笈
+                              0-1向量代數與微分-向量內機
+                           </a>
+
+                           <div class="video__list__item__time">
+                              02:50:51
+                           </div>
+
+                        </div>
+
+                        <div class="video__list__item ">
+
+                           <div class="video__list__item__trigger">
+                              <i class="fa fa-plus-square-o "></i>
+                           </div>
+
+                           <a href="#" class="video__list__item__title">
+                              03_ (向量)工程數學寫真秘笈
+                              0-1向量代數與微分-向量內機
+                           </a>
+
+                           <div class="video__list__item__time">
+                              02:50:51
+                           </div>
+
+                        </div>
+
+                        <div class="video__list__item ">
+
+                           <div class="video__list__item__trigger">
+                              <i class="fa fa-plus-square-o "></i>
+                           </div>
+
+                           <a href="#" class="video__list__item__title">
+                              03_ (向量)工程數學寫真秘笈
+                              0-1向量代數與微分-向量內機
+                           </a>
+
+                           <div class="video__list__item__time">
+                              02:50:51
+                           </div>
+
+                        </div>
+
+                        <div class="video__list__item ">
+
+                           <div class="video__list__item__trigger">
+                              <i class="fa fa-plus-square-o "></i>
+                           </div>
+
+                           <a href="#" class="video__list__item__title">
+                              03_ (向量)工程數學寫真秘笈
+                              0-1向量代數與微分-向量內機
+                           </a>
+
+                           <div class="video__list__item__time">
+                              02:50:51
+                           </div>
+
+                        </div>
+
+                        <div class="video__list__item ">
+
+                           <div class="video__list__item__trigger">
+                              <i class="fa fa-plus-square-o "></i>
+                           </div>
+
+                           <a href="#" class="video__list__item__title">
+                              03_ (向量)工程數學寫真秘笈
+                              0-1向量代數與微分-向量內機
+                           </a>
+
+                           <div class="video__list__item__time">
+                              02:50:51
+                           </div>
+
+                        </div>
+
+                        <div class="video__list__item ">
+
+                           <div class="video__list__item__trigger">
+                              <i class="fa fa-plus-square-o "></i>
+                           </div>
+
+                           <a href="#" class="video__list__item__title">
+                              03_ (向量)工程數學寫真秘笈
+                              0-1向量代數與微分-向量內機
+                           </a>
+
+                           <div class="video__list__item__time">
+                              02:50:51
+                           </div>
+
+                        </div>
+
+                        <div class="video__list__item ">
+
+                           <div class="video__list__item__trigger">
+                              <i class="fa fa-plus-square-o "></i>
+                           </div>
+
+                           <a href="#" class="video__list__item__title">
+                              03_ (向量)工程數學寫真秘笈
+                              0-1向量代數與微分-向量內機
+                           </a>
+
+                           <div class="video__list__item__time">
+                              02:50:51
+                           </div>
+
+                        </div>
+
+                        <div class="video__list__item ">
+
+                           <div class="video__list__item__trigger">
+                              <i class="fa fa-plus-square-o "></i>
+                           </div>
+
+                           <a href="#" class="video__list__item__title">
+                              03_ (向量)工程數學寫真秘笈
+                              0-1向量代數與微分-向量內機
+                           </a>
+
+                           <div class="video__list__item__time">
+                              02:50:51
+                           </div>
+
+                        </div>
+
+                        <div class="video__list__item ">
+
+                           <div class="video__list__item__trigger">
+                              <i class="fa fa-plus-square-o "></i>
+                           </div>
+
+                           <a href="#" class="video__list__item__title">
+                              03_ (向量)工程數學寫真秘笈
+                              0-1向量代數與微分-向量內機
+                           </a>
+
+                           <div class="video__list__item__time">
+                              02:50:51
+                           </div>
+
+                        </div>
+
+                        <div class="video__list__item ">
+
+                           <div class="video__list__item__trigger">
+                              <i class="fa fa-plus-square-o "></i>
+                           </div>
+
+                           <a href="#" class="video__list__item__title">
+                              03_ (向量)工程數學寫真秘笈
+                              0-1向量代數與微分-向量內機
+                           </a>
+
+                           <div class="video__list__item__time">
+                              02:50:51
+                           </div>
+
+                        </div>
+
+                        <div class="video__list__item ">
+
+                           <div class="video__list__item__trigger">
+                              <i class="fa fa-plus-square-o "></i>
+                           </div>
+
+                           <a href="#" class="video__list__item__title">
+                              03_ (向量)工程數學寫真秘笈
+                              0-1向量代數與微分-向量內機
+                           </a>
+
+                           <div class="video__list__item__time">
+                              02:50:51
+                           </div>
+
+                        </div>
+
+                        <div class="video__list__item ">
+
+                           <div class="video__list__item__trigger">
+                              <i class="fa fa-plus-square-o "></i>
+                           </div>
+
+                           <a href="#" class="video__list__item__title">
+                              03_ (向量)工程數學寫真秘笈
+                              0-1向量代數與微分-向量內機
+                           </a>
+
+                           <div class="video__list__item__time">
+                              02:50:51
+                           </div>
+
+                        </div>
+
+                        <div class="video__list__item ">
+
+                           <div class="video__list__item__trigger">
+                              <i class="fa fa-plus-square-o "></i>
+                           </div>
+
+                           <a href="#" class="video__list__item__title">
+                              03_ (向量)工程數學寫真秘笈
+                              0-1向量代數與微分-向量內機
+                           </a>
+
+                           <div class="video__list__item__time">
+                              02:50:51
+                           </div>
+
+                        </div>
+
+                        <div class="video__list__item ">
+
+                           <div class="video__list__item__trigger">
+                              <i class="fa fa-plus-square-o "></i>
+                           </div>
+
+                           <a href="#" class="video__list__item__title">
+                              03_ (向量)工程數學寫真秘笈
+                              0-1向量代數與微分-向量內機
+                           </a>
+
+                           <div class="video__list__item__time">
+                              02:50:51
+                           </div>
+
+                        </div>
+
+                     </div>
+
+
+                  </div>
+
+               </div>
             </div>
 
          </div>
-
-
-         <div class="message_block">
-
-            <div class="msg_box type_others">
-
-               <div class="others_avatar img_box">
-                  <img src="img/chat_room_avatar.png">
-               </div>
-
-               <div class="msg_container">
-
-               <div class="others_name">Tony0425</div>
-
-                  <div class="msg_content_box">
-                     <div class="msg_content">
-                     ！觀就遠源人產理期然、落子時地消！大麼站人。究生營日和物的不片著義是Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus aspernatur asperiores molestiae dolor eaque
-                     </div>
-
-
-                     <div class="datetime">
-                        <span class="date">2019.05.01</span>
-                        <span class="time">16:42</span>
-                     </div>
-                  </div>
-
-               </div>
-
-            </div>
-
-            <div class="msg_box type_self">
-
-               <div class="msg_container">
-
-                  <div class="msg_content_box">
-                     <div class="msg_content">
-                     ！觀就遠源人產理期然、落子時地消！大麼站人。究生營日和物的不片著義是Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus aspernatur asperiores molestiae dolor eaque
-                     </div>
-
-                     <div class="datetime">
-                        <span class="date">2019.05.01</span>
-                        <span class="time">16:42</span>
-                     </div>
-                  </div>
-
-               </div>
-
-            </div>
-
-            <div class="msg_box type_others">
-
-               <div class="others_avatar img_box">
-                  <img src="img/chat_room_avatar.png">
-               </div>
-
-               <div class="msg_container">
-
-               <div class="others_name">Tony0425</div>
-
-                  <div class="msg_content_box">
-                     <div class="msg_content">
-                     ！觀就遠源人產理期然、落子時地消！大麼站人。 molestiae dolor eaque
-                     
-                     </div>
-
-                     <div class="datetime">
-                        <span class="date">2019.05.01</span>
-                        <span class="time">16:42</span>
-                     </div>
-                  </div>
-
-               </div>
-
-            </div>
-
-            <div class="msg_box type_others">
-
-               <div class="others_avatar img_box">
-                  <img src="img/chat_room_avatar.png">
-               </div>
-
-               <div class="msg_container">
-
-               <div class="others_name">Tony0425</div>
-
-                  <div class="msg_content_box">
-                     <div class="msg_content">
-                        molestiae dolor eaque
-                     </div>
-                      
-                     <div class="datetime">
-                        <span class="date">2019.05.01</span>
-                        <span class="time">16:42</span>
-                     </div>
-                  </div>
-
-               </div>
-
-            </div>            
-
-            <div class="msg_box type_self">
-
-               <div class="msg_container">
-
-                  <div class="msg_content_box">
-                     <div class="msg_content">
-                        All right
-                     </div>
-                     <div class="datetime">
-                        <span class="date">2019.05.01</span>
-                        <span class="time">16:42</span>
-                     </div>
-                  </div>
-
-               </div>
-
-            </div>
-
-            <div class="msg_box type_others">
-
-            <div class="others_avatar img_box">
-               <img src="img/chat_room_avatar.png">
-            </div>
-
-            <div class="msg_container">
-
-            <div class="others_name">Tony0425</div>
-
-               <div class="msg_content_box">
-                  <div class="msg_content">
-                     molestiae dolor eaque
-                  </div>
-                     
-                  <div class="datetime">
-                     <span class="date">2019.05.01</span>
-                     <span class="time">16:42</span>
-                  </div>
-               </div>
-
-            </div>
-
-            </div>            
-
-            <div class="msg_box type_self">
-
-               <div class="msg_container">
-
-                  <div class="msg_content_box">
-                     <div class="msg_content">
-                        All right
-                     </div>
-                     <div class="datetime">
-                        <span class="date">2019.05.01</span>
-                        <span class="time">16:42</span>
-                     </div>
-                  </div>
-
-               </div>
-
-            </div>
-
-         </div>
-
-
-         <div class="enter_block">
-
-            <form class="box enter_box">
-               <input  type="text" class="inputer enter_key_false" placeholder="輸入訊息" maxlength="500" spellcheck="false">
-            </form>
-
-            <div class="box send_box">
-               <div class="arrow"></div>
-            </div>
-
-         </div>
-
-
-         <!-- <div id="EnterUsernameBlock" class="enter_username_block">
-
-            <div class="enter_box">
-
-               <div class="title">請輸入您的暱稱</div>
-               <form>
-                  <input  type="text" class="inputer enter_key_false"  placeholder="限20字"  maxlength="20" spellcheck="false" >
-               </form>
-               <button>確認</button>
-            </div>
-
-            <div class="mask"></div>
-         </div> -->
-
          
       </div>
    </div>
 
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script src="js/chatroom.js"></script>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+   <script src="js/chatroom.js"></script>
+
+   <script>
+
+
+      $('#VideoListTab .video__list__tab__item').on('click',function(){
+         $('.video__list__tab__item').removeClass('video__list__tab--isactive');
+         $(this).addClass('video__list__tab--isactive');
+      });
+
+      $('.video__list__item__trigger').on('click',function(){
+         if($(this).hasClass('video__list__item__trigger--isopen')){
+            $(this).html('<i class="fa fa-plus-square-o "></i>').removeClass('video__list__item__trigger--isopen').parent('.video__list__item').removeClass('video__list__item--isopen');
+         }else{
+            $(this).html('<i class="fa fa-minus-square-o "></i>').addClass('video__list__item__trigger--isopen').parent('.video__list__item').addClass('video__list__item--isopen');
+         };
+      });
+
+
+
+   </script>
 </body>
 </html>

@@ -4,11 +4,22 @@ $clr_light:#766E79;
 // $clr_gray:#727B84;
 $clr_dark:#495969;
 $clr_darker:#374654;
+
 $clr_yellow:#F0E68C;
 $clr_gray:#808080;
-$color_blue:#2589e7;
+$clr_blue:#2589e7;
 
 html{
+
+   background: linear-gradient(to left top, $clr_light, $clr_dark);
+   background-attachment: fixed;
+
+   &::-webkit-scrollbar {
+      width: 0;
+   }
+
+
+
    font-family: 'Century Gothic','Arial','Source Sans Pro' , 'Muli' ,'微軟正黑體', '新細明體';
    &::-webkit-scrollbar {
       width: 13px;
@@ -32,16 +43,43 @@ body{
    overflow-y: scroll; 
 }
 
+.area {
+   @include fxcw();
+   width: 100%;
+   height: 100%;
+   padding: 20px 0;
+   
+   .container {
+      @include ibl;
+      box-sizing: border-box;
+      overflow: hidden;
+      margin: 0 auto;
+      width: 100%;
+      max-width: 1300px;
+      padding: 20px 10px 10px;
+      @include M1301() {
+         width: 100%;
+         padding: 10px 10px 10px;
+      }
+
+      &.type_chatroom {
+         padding: 0px 0px;
+         max-width: unset;
+      }
+
+   }
+}
+
 a{
    text-decoration: none;
-   color: $color_blue;
+   color: $clr_blue;
    @include tst;
    &:hover{
       opacity: .7;
    }
    &.type2{
       text-decoration: underline;
-      color: $color_blue;
+      color: $clr_blue;
    }
 }
 input{
